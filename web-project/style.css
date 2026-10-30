@@ -1,0 +1,57 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.product-card {
+    margin: 15px 15px;
+    padding: 15px;
+    position: relative;
+    background-color: beige;
+    border: 1px rgb(104, 104, 104) solid;
+    border-radius: 5px;
+    width: 300px;
+}
+.badge,  .btn-add {
+    background-color: yellowgreen;
+    padding: 2px;
+    border: 1px rgb(34, 34, 34) solid;
+    border-radius: 5px;
+    color: rgb(34, 34, 34);
+}
+.badge {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.product-img {
+    border: 1px rgb(34, 34, 34) solid;
+    border-radius: 5px;
+}
+
+.title-price {
+    margin: 5px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.btn-add {
+    margin: 5px 0px;
+    transition: background-color 0.3s;
+    height: 30px;
+    width: 100%;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.btn-add:hover {
+    background-color: rgb(192, 255, 66);
+    border-color: rgb(83, 81, 81);
+}
