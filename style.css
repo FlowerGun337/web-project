@@ -3,55 +3,90 @@
     padding: 0px;
     text-decoration: none;
     box-sizing: border-box;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.product-card {
-    margin: 15px 15px;
-    padding: 15px;
+.catalog {
+    background-color: #662e1c;
+    display: flex;
+    padding: 5px 5px;
+    gap: 30px;
+}
+
+@media  (min-width: 577px) {
+    .catalog {
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+}
+
+.price-card {
     position: relative;
-    background-color: beige;
-    border: 1px rgb(104, 104, 104) solid;
-    border-radius: 5px;
-    width: 300px;
-}
-.badge,  .btn-add {
-    background-color: yellowgreen;
-    padding: 2px;
-    border: 1px rgb(34, 34, 34) solid;
-    border-radius: 5px;
-    color: rgb(34, 34, 34);
-}
-.badge {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.product-img {
-    border: 1px rgb(34, 34, 34) solid;
-    border-radius: 5px;
-}
-
-.title-price {
-    margin: 5px 0px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    padding: 5px;
+    justify-content: space-between;
+    flex-grow: 1;
+    background-color: #af4425;
+    width: 300px;
+    list-style-position: inside;
+    border: 1px #c9a66b solid;
+    border-radius: 8px;
+    
 }
 
-.btn-add {
-    margin: 5px 0px;
-    transition: background-color 0.3s;
-    height: 30px;
-    width: 100%;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+@media (min-width: 577px) and (max-width: 1200px) {
+    .catalog {
+        flex-wrap: wrap;
+    }
+    .price-card {
+        flex-basis: 45%;
+    }
+}
+
+@media (max-width: 576px) {
+    .catalog {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .price-card {
+        width: 100%;
+        flex-grow: 1;
+    }
+}
+
+.card-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #c9a66b;
+    border: 1px #662e1c solid;
     font-weight: 600;
+    border-radius: 8px;
+    padding: 5px;
 }
 
-.btn-add:hover {
-    background-color: rgb(192, 255, 66);
-    border-color: rgb(83, 81, 81);
+.btn-price {
+    background-color: #c9a66b;
+    width: 80%;
+    border: 1px #662e1c solid;
+    border-radius: 8px;
+    font-size:20px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-price:hover {
+    transform: scale(1.03);
+}
+
+.btn-primary:hover {
+    background-color: #ebdcb2;
+}
+
+.price-card ul {
+    flex-grow: 1;      /* Забирает всё свободное место по высоте */
+    width: 100%;       /* Растягиваем сам блок списка по ширине карточки */
+    padding: 15px 10px; /* Добавим аккуратные отступы вокруг текста */
 }

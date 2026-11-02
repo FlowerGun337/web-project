@@ -6,15 +6,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="product-card">
-        <p class="badge">New</p>
-        <img src="https://picsum.photos/266/200" class="product-img">
-        <div class="title-price">
-            <p class="product-title">Спортивные кроссовки Nike</p>
-            <p class="product-price">8990₽</p>
+    <main class="catalog">
+            <div class="price-card">
+            <h3 class="card-plan">Базовый</h3>
+            <div class="card-price">0 ₽<span>/мес</span></div>
+            <ul class="card-features">
+                <li>До 3 проектов</li>
+                <li>1 Гб места на диске</li>
+                <li>Базовая поддержка</li>
+            </ul>
+            <button class="btn-price btn-secondary">Начать</button>
         </div>
-        <input type="button" title="В корзину" value="В корзину" class="btn-add">
-    </div>
+
+        <!-- Карточка 2 (Акцентная) -->
+        <div class="price-card card-featured">
+            <div class="card-badge">Популярно</div>
+            <h3 class="card-plan">Стандарт</h3>
+            <div class="card-price">1 490 ₽<span>/мес</span></div>
+            <ul class="card-features">
+                <li>До 20 проектов</li>
+                <li>15 Гб места на диске</li>
+                <li>Приоритетная поддержка</li>
+            </ul>
+            <button class="btn-price btn-primary">Выбрать</button>
+        </div>
+
+        <!-- Карточка 3 -->
+        <div class="price-card">
+            <h3 class="card-plan">Максимум</h3>
+            <div class="card-price">4 990 ₽<span>/мес</span></div>
+            <ul class="card-features">
+                <li>Безлимитные проекты</li>
+                <li>100 Гб места на диске</li>
+                <li>Персональный менеджер</li>
+            </ul>
+            <button class="btn-price btn-secondary">Купить</button>
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
