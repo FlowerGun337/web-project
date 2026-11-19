@@ -6,17 +6,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="pop-up-btn">show up</button>
-    <div class="pop-up">
-      <div class="overlay">
-        <div class="pop-content">
-          <p>Are you ready?</p>
-          <button class="yeah">
-            Yes!
-          </button>
+    <main id="calc">
+        <div class="calc-body">
+            <div class="display">
+                <p class="nums" data-nums>0</p>
+                <div class="action" data-action></div>
+            </div>
+            <div class="calc-buts" data-buts>
+                <button type="button" class="but" data-but="C">C</button>
+                <button type="button" class="but" data-but="/">/</button>
+                <button type="button" class="but" data-but="*">*</button>
+                <button type="button" class="but" data-but="-">-</button>
+                <button type="button" class="but" data-but="7">7</button>
+                <button type="button" class="but" data-but="8">8</button>
+                <button type="button" class="but" data-but="9">9</button>
+                <button type="button" class="but plus" data-but="+">+</button>
+                <button type="button" class="but" data-but="4">4</button>
+                <button type="button" class="but" data-but="5">5</button>
+                <button type="button" class="but" data-but="6">6</button>
+                <button type="button" class="but" data-but="1">1</button>
+                <button type="button" class="but" data-but="2">2</button>
+                <button type="button" class="but" data-but="3">3</button>
+                <button type="button" class="but ent" data-but="Enter">Ent</button>
+                <button type="button" class="but zero" data-but="0">0</button>
+                <button type="button" class="but" data-but=".">.</button>
+            </div>
         </div>
-      </div>
-    </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>

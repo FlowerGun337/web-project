@@ -4,63 +4,119 @@
     text-decoration: none;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color:#ddc5a2;
 }
 
-.pop-up-btn   {
-  position: relative;
-  margin: 15px;
-  padding: 15px;
-  background-color: #682179;
-  color:blanchedalmond;
-  border: 1px #450c49 solid;
-  border-radius: 5px;
-  z-index: 10;
+body {
+    background-color: #523634;
 }
 
-.pop-up {
-  opacity: 0%;
-  height: 100vh;
-  width: 100vw;
-  top: 0px;
-  left: 0px;
-  position: fixed;
-  z-index: 0;
+main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #523634;
+    min-width: 300px;
+    min-height: 100vh;
+}
+/*ОПисание самой структуры каькулятора*/
+.calc-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background-color: #301b28;
+    border: 1px #ddc5a2 solid;
+    border-radius: 5px;
+    width: 90%;
+    height: 50vh;
+    min-width: 300px;
+    min-height: 455px;
 }
 
-.overlay {
-  background-color: rgba(145, 67, 213, 0.75);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/*Бловался с медиа*/
+.display   {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #523634;
+    border: 1px #ddc5a2 solid;
+    border-radius: 5px;
+    height: 10vh;
+    min-height: 80px;
+}
+.nums {
+    padding: 15px;
+    font-size: 24px;
 }
 
-.pop-content {
-  width: 50%;
-  height: 33%;
-  min-width: 150px;
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: blanchedalmond;
-  border: 15px #450c49 solid;
-  border-radius: 5px;
-  font-size: 24px;
+.action {
+    display: flex;
+    flex-wrap: nowrap;
+    opacity: 50%;
+    padding: 15px;
+    font-size: 24px;
+}
+/* ОПисание блока с кнопками*/
+.calc-buts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 15px;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: #523634;
+    border: 1px #ddc5a2 solid;
+    border-radius: 5px;
+}
+.plus {
+    grid-area: 2 / 4 / 4 / 5;
+}
+.ent {
+    grid-area: 4 / 4  / 6 / 5;
+}
+.zero {
+    grid-area: 5 / 1 / 6 / 3;
+}
+.but {
+    background-color: #b6452c;
+    border: 1px #ddc5a2 solid;
+    border-radius: 5px;font-size: 40px;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
-.yeah {
-  background-color: #9043d5;
-  width: 15vw;
-  padding: 15px;
-  border: 3px #450c49 solid;
-  border-radius: 5px;
-  font-size: 24px;
+.but:hover {
+    transform: scale(1.03);
+    background-color: #ce563c;
+}
+.but.active {
+    background-color: #f17255;
+}
+/*Настройка части с кнопками*/
+
+
+
+@media(min-width:768px) and (max-width:991px) {
+    .calc-body {
+      height: 75vh;  
+    }
+    .action, .nums {
+        font-size: 32px;
+    }
 }
 
-.pop-up.active  {
-  z-index: 1000;
-  opacity: 100%;
+@media(min-width: 992px) {
+    .calc-body {
+      width: 70vw;
+      height: 90vh;  
+    }
+    .action, .nums {
+        font-size: 48px;
+    }
 }
