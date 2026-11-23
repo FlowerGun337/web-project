@@ -1,0 +1,28 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+
+#click, #res {
+    margin: 15px;
+    width: 150px;
+    height: 100px;
+    background-color: #1e434c;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c99e10;
+    border: 1px #c99e10 solid;
+    border-radius: 5px;
+}
+
+.count {
+    background-color: #8d230f;
+    color: #c99e10;
+    border: 1px #c99e10 solid;
+    border-radius: 5px;
+    font-size: 32px;
+}
