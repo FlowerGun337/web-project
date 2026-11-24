@@ -43,7 +43,7 @@ calcBut.addEventListener(`click`, function (e) {
     2. Если да заполнение 1 числа, еси нет, то заполнение второго числа
     3. Проверка на нажатие Enter или C
     4. Проверка isNan*/
-    if(key.dataset.but === `C`) {
+    if(key.dataset.but === `c`) {
         nums.textContent = `0`;
         fNum.textContent = null;
         sNum.textContent = null;
@@ -87,7 +87,7 @@ calcBut.addEventListener(`click`, function (e) {
 });
 
 function calculate(a, b, act) {
-        console.log(act)
+
         let res = 0;
         switch (act) {
             case `+`:
@@ -109,4 +109,74 @@ function calculate(a, b, act) {
         return res;
     }
 /*Функция счета была вынесена за тело действия, так как она будет создаваться каждый раз снова
-*/ 
+*/
+document.addEventListener(`keydown`, function (e) {
+    let key;
+    buts.forEach(item => {
+        if(item.dataset.but === e.key) {
+            key = e.key;
+        }
+    });
+    if(e.key === `Backspace`) {
+            key = e.key;
+        };
+
+    if(!key) {
+        return
+    };
+    
+    if(key === `Backspace`) {
+        if(sNum.textContent) {
+            sNum.textContent = sNum.textContent.slice(0, -1) || null;
+        } else if(act.textContent) {
+            act.textContent = ``;
+        } else if(fNum.textContent) {
+            fNum.textContent = fNum.textContent.slice(0, -1) || null;
+        } else {
+            return;
+        }
+    }
+
+    if(key === `c`) {
+        nums.textContent = 0;
+        fNum.textContent = null;
+        sNum.textContent = null;
+        act.textContent = null;
+        return;
+    } else if(key === `Enter`) {
+        e.preventDefault()
+        nums.textContent = calculate(fNum.textContent, sNum.textContent, act.textContent);
+        fNum.textContent = nums.textContent;
+        sNum.textContent = null;
+        act.textContent = null; 
+        return;
+    }
+    let sKey = String(key);
+
+    if(numAr.includes(sKey) || sKey === `.`) {
+
+        if(fNum.textContent === `` && sKey === `.`) {
+            fNum.textContent = `0`;
+        }
+        //Проверка на то, есть ли перед точкой число
+        
+        if(fNum.textContent && act.textContent) {
+            if(numAr.includes(sKey) || sKey === `.`) {
+                if (sNum.textContent && sNum.textContent.includes(`.`) && sKey === `.`) {
+                    return;
+                }
+                sNum.textContent += sKey;  
+        }
+        } else {
+            if(numAr.includes(sKey) || sKey === `.`) {
+                if(fNum.textContent && fNum.textContent.includes(`.`) && sKey === `.`) {
+                    return;
+                }
+                console.log(`Here!`)
+                fNum.textContent += sKey;  
+        }
+        }
+    } else if (acts.includes(sKey)) {
+        act.textContent = sKey;
+    }
+})
